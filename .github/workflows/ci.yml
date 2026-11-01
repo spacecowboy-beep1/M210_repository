@@ -1,0 +1,21 @@
+YAML
+
+name: M210 CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: PHP-Version prüfen
+        run: php -v
+
+      - name: Syntax-Test der PHP-Dateien
+        run: |
+          php -l anmelden.php
