@@ -1,0 +1,8 @@
+stages:
+  - test
+
+php_syntax_check:
+  stage: test
+  image: php:latest
+  script:
+    - php -l app/anmelden.php
